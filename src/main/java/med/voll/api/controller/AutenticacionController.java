@@ -1,7 +1,11 @@
 package med.voll.api.controller;
 
+<<<<<<< HEAD
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
+=======
+
+>>>>>>> 8925553c3f821d8f9eb8daaaa432cace1b56d1c6
 import jakarta.validation.Valid;
 import med.voll.api.domain.usuarios.DatosAutenticacionUsuario;
 import med.voll.api.domain.usuarios.Usuario;
@@ -19,7 +23,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/login")
+<<<<<<< HEAD
 @Tag(name = "Autenticacion", description = "obtiene el token para el usuario asignado que da acceso al resto de endpoint")
+=======
+>>>>>>> 8925553c3f821d8f9eb8daaaa432cace1b56d1c6
 public class AutenticacionController {
 
     @Autowired
@@ -37,4 +44,8 @@ public class AutenticacionController {
         return ResponseEntity.ok(new DatosJWTToken(JWTtoken));
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8925553c3f821d8f9eb8daaaa432cace1b56d1c6
