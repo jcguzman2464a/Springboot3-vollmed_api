@@ -1,12 +1,9 @@
 package med.voll.api.controller;
 
 
-<<<<<<< HEAD
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
-=======
->>>>>>> 8925553c3f821d8f9eb8daaaa432cace1b56d1c6
 import jakarta.validation.Valid;
 import med.voll.api.domain.paciente.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +18,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("/pacientes")
-<<<<<<< HEAD
 @SecurityRequirement(name = "bearer-key")
 @SuppressWarnings("all")
-=======
->>>>>>> 8925553c3f821d8f9eb8daaaa432cace1b56d1c6
 public class PacienteController {
 
     @Autowired
@@ -33,10 +27,7 @@ public class PacienteController {
 
     @PostMapping
     @Transactional
-<<<<<<< HEAD
     @Operation(summary = "Registra un nuevo paciente")
-=======
->>>>>>> 8925553c3f821d8f9eb8daaaa432cace1b56d1c6
     public ResponseEntity registrar(@RequestBody @Valid DatosRegistroPaciente datos, UriComponentsBuilder uriBuilder) {
         var paciente = new Paciente(datos);
         repository.save(paciente);
@@ -46,10 +37,7 @@ public class PacienteController {
     }
 
     @GetMapping
-<<<<<<< HEAD
     @Operation(summary = "Obtiene el listado para los pacientes")
-=======
->>>>>>> 8925553c3f821d8f9eb8daaaa432cace1b56d1c6
     public ResponseEntity<Page<DatosListaPaciente>> listar(@PageableDefault(size = 10, sort = {"nombre"}) Pageable paginacion) {
         var page = repository.findAllByActivoTrue(paginacion).map(DatosListaPaciente::new);
         return ResponseEntity.ok(page);
@@ -57,10 +45,7 @@ public class PacienteController {
 
     @PutMapping
     @Transactional
-<<<<<<< HEAD
     @Operation(summary = "Actualiza las informaciones para el paciente")
-=======
->>>>>>> 8925553c3f821d8f9eb8daaaa432cace1b56d1c6
     public ResponseEntity actualizar(@RequestBody @Valid DatosActualizacionPaciente datos) {
         var paciente = repository.getReferenceById(datos.id());
         paciente.actualizarInformacoes(datos);
@@ -70,10 +55,7 @@ public class PacienteController {
 
     @DeleteMapping("/{id}")
     @Transactional
-<<<<<<< HEAD
     @Operation(summary = "Elimina un paciente a partir del ID")
-=======
->>>>>>> 8925553c3f821d8f9eb8daaaa432cace1b56d1c6
     public ResponseEntity eliminar(@PathVariable Long id) {
         var paciente = repository.getReferenceById(id);
         paciente.eliminar();
@@ -82,19 +64,9 @@ public class PacienteController {
     }
 
     @GetMapping("/{id}")
-<<<<<<< HEAD
     @Operation(summary = "obtiene los detalles para el paciente con el ID indicado")
-=======
->>>>>>> 8925553c3f821d8f9eb8daaaa432cace1b56d1c6
     public ResponseEntity detallar(@PathVariable Long id) {
         var paciente = repository.getReferenceById(id);
         return ResponseEntity.ok(new DatosDetallesPaciente(paciente));
     }
-<<<<<<< HEAD
 }
-=======
-
-
-}
-
->>>>>>> 8925553c3f821d8f9eb8daaaa432cace1b56d1c6

@@ -27,10 +27,7 @@ public class SecurityConfigurations {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS) // Le indicamos a Spring el tipo de sesion
                 .and().authorizeRequests()
                 .requestMatchers(HttpMethod.POST, "/login").permitAll()
-<<<<<<< HEAD
                 .requestMatchers("/swagger-ui.html", "/v3/api-docs/**","/swagger-ui/**").permitAll()
-=======
->>>>>>> 8925553c3f821d8f9eb8daaaa432cace1b56d1c6
                 .anyRequest()
                 .authenticated()
                 .and()
@@ -49,8 +46,4 @@ public class SecurityConfigurations {
         return new BCryptPasswordEncoder();
     }
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 8925553c3f821d8f9eb8daaaa432cace1b56d1c6
